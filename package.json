@@ -1,0 +1,13 @@
+{
+  "name": "Ajax_assignment",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "ejs": "*",
+    "express": "3.2.6",
+    "socket.io": "^1.5.1"
+  }
+}
