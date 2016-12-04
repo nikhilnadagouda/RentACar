@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require("./mongodb");
-var mongoURL = "mongodb://localhost:27017/cmpe_280";
+var mongoURL = "mongodb://root:root@ds119618.mlab.com:19618/cmpe_280";
 
 /* GET home page. */
 exports.index = function(req, res) {
@@ -41,11 +41,12 @@ exports.getCars = function(req, res) {
 		}
 		coll_2.find(query).toArray(function(err, result){
 			if (err) {
-				console.log("In error");
+				console.log("In error::"+err);
+				console.log(JSON.stringify(err));
 				response.code = 401;
 				callback(null, response);
 			}
-			res.send('/',  { header: 'Search', title: 'Search', data: result });
+			res.status(200).send({ header: 'Search', title: 'Search', data: result });
 	   	});
 	});
 };
@@ -61,7 +62,7 @@ exports.cardetails = function(req, res) {
 		console.log("Query: "+user_query);
 		coll_2.findOne({id:parseInt(user_query)}, function(err, result){
 			if (err) {
-				console.log("In error");
+				console.log("In error"+err);
 				response.code = 401;
 				callback(null, response);
 			}
