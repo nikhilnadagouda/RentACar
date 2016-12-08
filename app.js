@@ -8,7 +8,6 @@ var mongo = require('mongo');
 var mongodb = require('./routes/mongodb');
 
 //copied
-#!/usr/bin/env node
 
 /**
  * Module dependencies.
