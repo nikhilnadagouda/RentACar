@@ -61,6 +61,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-http.listen(3001, function(){
+http.listen(process.env.PORT, function(){
   console.log('listening on port 3001');
 });
